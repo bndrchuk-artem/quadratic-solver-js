@@ -18,11 +18,7 @@ function interactiveMode() {
   
   console.log(`Your equation is: ${a}x^2 + ${b}x + ${c} = 0`);
 
-  const result = solveQuadratic(a, b, c)
-  
-  console.log(`Your equation has ${result.length} root(s)`);
-  result.forEach((root, index) => console.log(`x${index + 1} = ${root}`))
-
+  return solveQuadratic(a, b, c)
 }
 
-//interactiveMode()
+module.exports = { interactiveMode };

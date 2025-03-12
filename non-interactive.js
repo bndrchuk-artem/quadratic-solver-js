@@ -2,6 +2,11 @@ const fs = require('fs')
 const { solveQuadratic } = require("./solver.js")
 
 function textFileMode(filePath) {
+  if (!fs.existsSync(filePath)) {
+    console.error(`Error. File ${filePath} does not exist`);
+    process.exit(1)
+  }
+  
   const content = fs.readFileSync(filePath, 'utf-8').trim();
   const coefficients = content.split(/\s+/).map((value) => Number(value))
 

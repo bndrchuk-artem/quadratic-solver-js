@@ -5,7 +5,7 @@ function textFileMode(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8').trim();
   const coefficients = content.split(/\s+/).map((value) => Number(value))
 
-  if (coefficients.length !== 3 || coefficients.some((value) => isNaN(value))) {
+  if (coefficients.length !== 3 || coefficients.some(isNaN)) {
     console.error("Error. Invalid file format");
     process.exit(1);
   }

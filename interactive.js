@@ -21,11 +21,8 @@ function interactiveMode() {
   const result = solveQuadratic(a, b, c)
   
   console.log(`Your equation has ${result.length} root(s)`);
-  for (const root of result) {
-    let count = 1;
-    console.log(`x${count++} = ${root}`);
-  }
+  result.forEach((root, index) => console.log(`x${index + 1} = ${root}`))
 
 }
 
-interactiveMode()
+//interactiveMode()

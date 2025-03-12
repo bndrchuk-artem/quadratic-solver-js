@@ -1,4 +1,5 @@
 const readline = require("readline-sync");
+const { solveQuadratic } = require("./solver.js")
 
 function getInputNumber(coefficientPrompt) {
   while (true) {
@@ -16,6 +17,14 @@ function interactiveMode() {
   const c = getInputNumber("c = ")
   
   console.log(`Your equation is: ${a}x^2 + ${b}x + ${c} = 0`);
+
+  const result = solveQuadratic(a, b, c)
+  
+  console.log(`Your equation has ${result.length} root(s)`);
+  for (const root of result) {
+    let count = 1;
+    console.log(`x${count++} = ${root}`);
+  }
 
 }
 
